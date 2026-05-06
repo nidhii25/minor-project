@@ -76,7 +76,10 @@ export default function AnalysisPage() {
     formData.append('keywords', keywords.join(','));
     const API_URL = import.meta.env.VITE_API_URL;
     try {
-      const res = await fetch('${API_URL}/analyze', { method: 'POST', body: formData });
+      const res = await fetch(`${API_URL}/analyze`, {
+                        method: 'POST',
+                        body: formData,
+                      });
       const data = await res.json();
       if (data.status === 'success') {
         setProgress(100);
