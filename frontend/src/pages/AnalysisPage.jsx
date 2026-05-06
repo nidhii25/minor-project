@@ -76,7 +76,7 @@ export default function AnalysisPage() {
     formData.append('keywords', keywords.join(','));
 
     try {
-      const res = await fetch('http://localhost:8000/analyze', { method: 'POST', body: formData });
+      const res = await fetch('https://minor-project-tflw.onrender.com/analyze', { method: 'POST', body: formData });
       const data = await res.json();
       if (data.status === 'success') {
         setProgress(100);
